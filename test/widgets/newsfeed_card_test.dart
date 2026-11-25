@@ -1,16 +1,18 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vicente_application_1/widgets/feed_action_button.dart';
-import 'package:vicente_application_1/widgets/newsfeed_card.dart';
-import 'package:vicente_application_1/widgets/post_image.dart';
-import 'package:vicente_application_1/widgets/profile_avatar.dart';
+import 'package:flutter_application_1/widgets/feed_action_button.dart';
+import 'package:flutter_application_1/widgets/newsfeed_card.dart';
+import 'package:flutter_application_1/widgets/post_image.dart';
+import 'package:flutter_application_1/widgets/profile_avatar.dart';
 
 void main() {
   testWidgets('newsfeed uses dedicated image, avatar, and action widgets', (
     tester,
   ) async {
     await tester.pumpWidget(
-      const MaterialApp(home: Scaffold(body: NewsfeedCard())),
+      MaterialApp(
+        home: Scaffold(body: ListView(children: const [NewsfeedCard()])),
+      ),
     );
 
     expect(find.byType(PostImage), findsOneWidget);
@@ -20,11 +22,15 @@ void main() {
 
   testWidgets('like button toggles the displayed like count', (tester) async {
     await tester.pumpWidget(
-      const MaterialApp(home: Scaffold(body: NewsfeedCard())),
+      MaterialApp(
+        home: Scaffold(body: ListView(children: const [NewsfeedCard()])),
+      ),
     );
 
     expect(find.text('177'), findsOneWidget);
 
+    await tester.ensureVisible(find.text('Like'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Like'));
     await tester.pump();
 
@@ -40,7 +46,11 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      const MaterialApp(home: Scaffold(body: NewsfeedCard(imageUrl: null))),
+      MaterialApp(
+        home: Scaffold(
+          body: ListView(children: const [NewsfeedCard(imageUrl: null)]),
+        ),
+      ),
     );
 
     expect(find.byType(PostImage), findsNothing);

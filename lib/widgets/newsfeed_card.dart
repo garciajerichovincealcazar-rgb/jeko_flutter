@@ -1,12 +1,12 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:vicente_application_1/widgets/feed_action_button.dart';
-import 'package:vicente_application_1/widgets/post_image.dart';
-import 'package:vicente_application_1/widgets/profile_avatar.dart';
+import 'package:flutter_application_1/widgets/feed_action_button.dart';
+import 'package:flutter_application_1/widgets/post_image.dart';
+import 'package:flutter_application_1/widgets/profile_avatar.dart';
 
 class NewsfeedCard extends StatefulWidget {
   const NewsfeedCard({
     super.key,
-    this.imageUrl = 'https://i.pinimg.com/736x/90/56/43/905643ce9de034b119d4dbedf672d72f.jpg',
+    this.imageUrl = 'https://i.pinimg.com/736x/95/60/e4/9560e49fdcc8097029c215d311d6bd77.jpg',
   });
 
   final String? imageUrl;
@@ -17,7 +17,7 @@ class NewsfeedCard extends StatefulWidget {
 
 class _NewsfeedCardState extends State<NewsfeedCard> {
   static const _profileImageUrl =
-      'https://i.pinimg.com/736x/55/4b/85/554b85b3b5150c46b579186d0ee6ea3e.jpg';
+      'https://i.pinimg.com/736x/5d/a0/9d/5da09dfb5acd5772c5eb341b4fc6857e.jpg';
   var _isLiked = false;
   var _likes = 177;
 
@@ -41,7 +41,7 @@ class _NewsfeedCardState extends State<NewsfeedCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Mitya',
+                        'JEKOPOGI',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 3),
@@ -63,14 +63,16 @@ class _NewsfeedCardState extends State<NewsfeedCard> {
           const Padding(
             padding: EdgeInsets.fromLTRB(14, 0, 14, 8),
             child: Text(
-  "I don't know what we're doing, but apparently, we're doing it together. "
-  "One minute we're minding our own business, and the next we're somehow "
-  "caught up in the same chaos. Nobody knows the plan, nobody knows what's "
-  "going on, but somehow everyone is committed to making it work. "
-  "At this point, we're just going with the flow, trusting each other, "
-  "and hoping for the best. Whatever happens next, at least we're all "
-  "confused together.",
-),
+              "I don't know what the enemy is planning, but apparently, "
+              "I'm the one who's supposed to protect everyone. One minute "
+              "I'm just standing here, and the next thing I know, I'm "
+              "leading the entire team into battle. Nobody knows the plan, "
+              "everyone is running in different directions, and somehow "
+              "I'm expected to save the day. But don't worry, I've got my "
+              "shield, my hammer, and absolutely no idea what's going on. "
+              "Whatever happens next, Tigreal will stand his ground. "
+              "FOR THE TEAM!",
+            ),
           ),
           const Padding(
             padding: EdgeInsets.fromLTRB(14, 0, 14, 12),

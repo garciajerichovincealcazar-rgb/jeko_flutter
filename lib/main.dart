@@ -1,5 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vicente_application_1/screens/newsfeed_screen.dart';
+import 'package:flutter_application_1/screens/newsfeed_screen.dart';
 import 'package:material_ui/material_ui.dart';
 
 void main() {

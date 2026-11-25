@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:vicente_application_1/widgets/newsfeed_card.dart';
+import 'package:flutter_application_1/widgets/newsfeed_card.dart';
 
 class NewsfeedScreen extends StatelessWidget {
   const NewsfeedScreen({super.key});
