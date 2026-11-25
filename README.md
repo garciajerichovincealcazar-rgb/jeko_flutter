@@ -1,16 +1,16 @@
-# Vicente Application 1 - Flutter Newsfeed
+# Garcia Flutter Newsfeed
 
 ## Lab Activity 1: Discussion
 
-This activity enhances the newsfeed by separating repeated visual elements into reusable Flutter widgets.
+For this activity, I updated the newsfeed so a post can show an image when one is provided, or display normally without one.
 
 ### Laboratory Discussion
 
-Discuss how you integrate the Image to the newsfeed_card.dart and make it dynamic whether it has an image or not.
+I made `imageUrl` an optional value in `NewsfeedCard`. When it contains a URL, the card displays the reusable `PostImage` widget. If it is `null` or blank, the image widget is skipped, so there is no empty space in the post.
 
-The post image is integrated through the reusable `PostImage` widget in `lib/widgets/post_image.dart`. `NewsfeedCard` exposes an optional `imageUrl` parameter. The card uses a widget-level condition: if `imageUrl` is null or empty, the `PostImage` widget is not rendered, so posts without images do not reserve an image area. When a URL is supplied, `NewsfeedCard` creates `PostImage`, and the widget uses `Image.network` with `BoxFit.cover`, a loading indicator, and an error fallback.
+`PostImage` loads the picture from the internet and shows a loading indicator while it comes in. If the image cannot be loaded, it displays a fallback icon instead. This lets the same newsfeed card handle posts with or without a picture.
 
-The user profile image uses the reusable `ProfileAvatar` widget, implemented with `CircleAvatar`. It displays the profile photo with `Image.network` and shows a person icon when the image cannot load. The Like, Comment, and Share controls use the reusable `FeedActionButton` widget. This implementation displays the like count directly and does not use reaction icons; pressing Like increments or decrements only the displayed count.
+I also used separate `ProfileAvatar` and `FeedActionButton` widgets for the profile pictures and the Like, Comment, and Share buttons. Keeping these pieces reusable makes the card easier to update and keeps its layout consistent.
 
 ### Run the application
 
